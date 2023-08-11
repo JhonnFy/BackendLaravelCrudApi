@@ -85,5 +85,8 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('customers');
+        Schema::dropIfExists('orders');
+        Schema::dropIfExists('products');
+        Schema::dropIfExists('ordered_products');
     }
 };
