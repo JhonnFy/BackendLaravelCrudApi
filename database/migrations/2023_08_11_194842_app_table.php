@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -27,9 +27,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('company_name');
             $table->string('addres');
-            $table->string('population');
             $table->integer('phone_number');
-            $table->string('name_responsible');
             $table->string('record');
 
             $table->timestamps();
@@ -73,6 +71,18 @@ return new class extends Migration
             $table->foreign('products_id')->references('id')->on('products');
 
             $table->float('units');
+            
+            $table->timestamps();
+        });
+
+
+        Schema::create('images', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('image');
+            
+            $table->unsignedInteger('customers_id');
+            $table->foreign('customers_id')->references('id')->on('customers');
+            
             $table->timestamps();
         });
 

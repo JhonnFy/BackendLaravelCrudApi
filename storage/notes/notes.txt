@@ -1,0 +1,3 @@
+1-create migration
+2-create model POST
+3-execute migrate
