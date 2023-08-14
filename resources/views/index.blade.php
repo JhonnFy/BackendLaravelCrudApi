@@ -60,7 +60,7 @@
                 <label for="remember-me">Remember me</label>
                 <a href="#">¿Forgot Password?</a>
             </div>
-            <input type="submit" value="login now" class="btn">
+            <input type="submit" value="Create Now" class="btn">
             <p>Don't have an image<a href="#">Select One</a></p>
         </form>
     </header>
