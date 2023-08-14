@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel CRUD With Multiple Image Upload</title>
+        <title>Laravel CRUD</title>
 
       <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -14,25 +14,46 @@
     </head>
     <body>
 
-        <div class="container" style="margin-top: 80px;">
+        <div class="container" style="margin-top: 50px;">
 
-            <h3 class="text-center text-danger"><b>Laravel Crud Customer</b> </h3>
-            <a href="/create" class="btn btn-outline-success">Add New Customer</a>
+            <h3 class="text-center text-danger"><b>Laravel </b> </h3>
+            <a href="/create" class="btn btn-outline-success">Add New Line</a>
 
             <table class="table">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>Id</th>
                     <th>Company Name</th>
                     <th>Addres</th>
-                    <th>Phone_number</th>
+                    <th>Description</th>
+                    <th>Phone Number</th>
                     <th>Record</th>
                     <th>Update</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
-   
+
+
+                    @foreach ($posts as $post)
+                 <tr>
+                       <th scope="row">{{ $post->id }}</th>
+                       <td>{{ $post->company_name }}</td>
+                       <td>{{ $post->ddres }}</td>
+                       <td>{{ $post->body }}</td>
+                       <td><img src="cover/{{ $post->cover }}" class="img-responsive" style="max-height:100px; max-width:100px" alt="" srcset=""></td>
+                       <td><a href="/edit/{{ $post->id }}" class="btn btn-outline-primary">Update</a></td>
+                       <td>
+                           <form action="/delete/{{ $post->id }}" method="post">
+                            <button class="btn btn-outline-danger" onclick="return confirm('Are you sure?');" type="submit">Delete</button>
+                            @csrf
+                            @method('delete')
+                        </form>
+                       </td>
+
+                   </tr>
+                   @endforeach
+
                 </tbody>
               </table>
         </div>
