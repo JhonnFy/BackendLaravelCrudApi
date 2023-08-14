@@ -28,7 +28,8 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('addres');
             $table->integer('phone_number');
-            $table->string('record');
+            $table->string('image');
+
 
             $table->timestamps();
         });
@@ -75,17 +76,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-
-        Schema::create('images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('image');
-            
-            $table->unsignedInteger('customers_id');
-            $table->foreign('customers_id')->references('id')->on('customers');
-            
-            $table->timestamps();
-        });
-
     }
 
     /**
@@ -98,6 +88,5 @@ return new class extends Migration
         Schema::dropIfExists('orders');
         Schema::dropIfExists('products');
         Schema::dropIfExists('ordered_products');
-        Schema::dropIfExists('images');
     }
 };
