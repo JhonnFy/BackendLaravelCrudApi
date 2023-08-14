@@ -49,17 +49,19 @@
 
         <form action="" class="login-form">
             <h3>Create Customer</h3>
-            <input type="email" placeholder="Enter your: COMPANY NAME" class="box">
-            <input type="email" placeholder="Enter your: ADDRESS EMAIL" class="box">
-            <input type="email" placeholder="Enter your: PHONE NUMBER" class="box">
-            <input type="password" placeholder="Enter your password" class="box">
+            <div class="flex">
+                <label for="remember-me">Enter your:</label>
+            </div>
+            <input type="email" placeholder="Company Name" class="box">
+            <input type="email" placeholder="Addres Email" class="box">
+            <input type="email" placeholder="Phone Number" class="box">
             <div class="flex">
                 <input type="checkbox" name="" id="remember-me">
                 <label for="remember-me">Remember me</label>
                 <a href="#">¿Forgot Password?</a>
             </div>
             <input type="submit" value="login now" class="btn">
-            <p>Don't have an account <a href="#">Create One</a></p>
+            <p>Don't have an image<a href="#">Select One</a></p>
         </form>
     </header>
 
