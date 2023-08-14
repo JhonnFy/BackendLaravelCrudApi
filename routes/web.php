@@ -14,16 +14,6 @@ use App\Http\Controllers\Customers;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
- //Route::get('/', [Customers::class,'index']);
-
-// Route::get('/create', function(){
-//     return view ('create');
-// });
-
-// Route::post('/post', [PostController::class,'store']);
-
-Route::resource('/', Customers::class);
+Route::get('/', function () {
+     return view('welcome');
+});
