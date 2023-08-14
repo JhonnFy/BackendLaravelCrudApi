@@ -28,8 +28,7 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('addres_email');
             $table->integer('phone_number');
-            $table->string('image');
-
+            #$table->string('image')->nullable;
 
             $table->timestamps();
         });
@@ -75,6 +74,7 @@ return new class extends Migration
             
             $table->timestamps();
         });
+        
 
     }
 

@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Customers;
+use App\Http\Controllers\OutCustomer;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,7 @@ use App\Http\Controllers\Customers;
 //      return view('welcome');
 // });
 
-
-Route::get('/', function () {
-     return view('index');
-});
-
+Route::get('/', [CustomerController::class,'view_index'])->name('customer.index');
+Route::get('/',[OutCustomer::class,'OutCustomer'])->name('customer.OutCustomer');
+Route::post('/customer/create', [CustomerController::class,'store'])->name('customer.store');
 

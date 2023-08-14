@@ -47,14 +47,17 @@
             <label for="search-box" class="fas fa-search"></label>
         </form>
 
-        <form action="" class="login-form">
+        <!-- ThisForm -->
+        <form method="post" class="login-form" action="{{route('customer.store')}}">
+            @csrf
+            @method('post')
             <h3>Create Customer</h3>
             <div class="flex">
                 <label for="remember-me">Enter your:</label>
             </div>
-            <input type="email" placeholder="Company Name" class="box">
-            <input type="email" placeholder="Addres Email" class="box">
-            <input type="email" placeholder="Phone Number" class="box">
+            <input type="text" placeholder="Company Name" class="box" name="company_name" required>
+            <input type="email" placeholder="Addres Email" class="box" name="addres_email" required>
+            <input type="number" placeholder="Phone Number" class="box" name="phone_number" required>
             <div class="flex">
                 <input type="checkbox" name="" id="remember-me">
                 <label for="remember-me">Remember me</label>
