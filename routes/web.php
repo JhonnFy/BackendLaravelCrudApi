@@ -19,3 +19,7 @@ use App\Http\Controllers\SecondController;
 // });
 
 Route::get('/', [SecondController::class,'view_index']);
+
+Route::get('/create', function(){
+    return view ('create');
+});
