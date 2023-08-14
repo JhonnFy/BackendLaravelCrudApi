@@ -13,6 +13,7 @@ class Post extends Model
         'addres',
         'phone_number',
         'record',
+        'cover',
     ];
 
     public function images(){

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SecondController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +18,10 @@ use App\Http\Controllers\SecondController;
 //     return view('welcome');
 // });
 
-Route::get('/', [SecondController::class,'view_index']);
+Route::get('/', [PostController::class,'index']);
 
 Route::get('/create', function(){
     return view ('create');
 });
 
-Route::post('/post', [SecondController::class,'store']);
+Route::post('/post', [PostController::class,'store']);
