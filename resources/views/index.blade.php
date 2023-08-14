@@ -49,10 +49,9 @@
 
         <form action="" class="login-form">
             <h3>Create Customer</h3>
-            <input type="email" placeholder="Enter your email" class="box">
-            <input type="email" placeholder="Enter your email" class="box">
-            <input type="email" placeholder="Enter your email" class="box">
-            <input type="email" placeholder="Enter your email" class="box">
+            <input type="email" placeholder="Enter your: COMPANY NAME" class="box">
+            <input type="email" placeholder="Enter your: ADDRESS EMAIL" class="box">
+            <input type="email" placeholder="Enter your: PHONE NUMBER" class="box">
             <input type="password" placeholder="Enter your password" class="box">
             <div class="flex">
                 <input type="checkbox" name="" id="remember-me">

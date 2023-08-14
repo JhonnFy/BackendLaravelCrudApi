@@ -26,7 +26,7 @@ return new class extends Migration
         Schema::create('customers',function (Blueprint $table) {
             $table->increments('id');
             $table->string('company_name');
-            $table->string('addres');
+            $table->string('addres_email');
             $table->integer('phone_number');
             $table->string('image');
 
