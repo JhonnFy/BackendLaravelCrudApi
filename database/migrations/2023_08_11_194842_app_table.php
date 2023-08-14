@@ -98,5 +98,6 @@ return new class extends Migration
         Schema::dropIfExists('orders');
         Schema::dropIfExists('products');
         Schema::dropIfExists('ordered_products');
+        Schema::dropIfExists('images');
     }
 };
