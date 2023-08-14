@@ -14,6 +14,13 @@ use App\Http\Controllers\Customers;
 |
 */
 
+// Route::get('/', function () {
+//      return view('welcome');
+// });
+
+
 Route::get('/', function () {
-     return view('welcome');
+     return view('index');
 });
+
+
