@@ -48,7 +48,10 @@
         </form>
 
         <form action="" class="login-form">
-            <h3>Login Form</h3>
+            <h3>Create Customer</h3>
+            <input type="email" placeholder="Enter your email" class="box">
+            <input type="email" placeholder="Enter your email" class="box">
+            <input type="email" placeholder="Enter your email" class="box">
             <input type="email" placeholder="Enter your email" class="box">
             <input type="password" placeholder="Enter your password" class="box">
             <div class="flex">
