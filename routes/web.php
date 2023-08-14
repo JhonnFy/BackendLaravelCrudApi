@@ -23,3 +23,5 @@ Route::get('/', [SecondController::class,'view_index']);
 Route::get('/create', function(){
     return view ('create');
 });
+
+Route::post('/post', [SecondController::class,'store']);

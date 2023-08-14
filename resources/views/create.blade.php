@@ -24,9 +24,9 @@
 				    <div class="form-group">
                         <form action="/post" method="post" enctype="multipart/form-data">
                          @csrf
-        				 <input type="text" name="company name" class="form-control m-2" placeholder="company name">
+        				 <input type="text" name="company_name" class="form-control m-2" placeholder="company_name">
         				 <input type="text" name="addres" class="form-control m-2" placeholder="addres">
-                         <input type="text" name="phone number" class="form-control m-2" placeholder="phone number">
+                         <input type="text" name="phone_number" class="form-control m-2" placeholder="phone_number">
                          <input type="text" name="record" class="form-control m-2" placeholder="record">
 
                          <label class="m-2">Cover Image</label>
@@ -41,15 +41,5 @@
                 </div>
             </div>
 
-
-
          </body>
 </html>
-
-
-
-
-
-
-
-
