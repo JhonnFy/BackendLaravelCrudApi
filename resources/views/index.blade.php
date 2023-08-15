@@ -48,7 +48,7 @@
         </form>
 
         <!-- ThisForm -->
-        <form method="post" class="login-form" action="{{route('customer.store')}}">
+        <form method="post" class="login-form" action="{{ route('customer.store') }}">
             @csrf
             @method('post')
             <h3>Create Customer</h3>
@@ -142,26 +142,34 @@
     </section>
     <!--Home Section Ends-->
 
-    <section class="about" id="about">
+    <!--Home Section Starts-->
+    <section class="about" id="about"> 
         <h1 class="heading">Read</h1>
-        <div class="">
+        <div>
             <table>
                 <tr>
-                  <th>id</th>
-                  <th>Company Name</th>
-                  <th>Address Email</th>
-                  <th>Phone Number</th>
+                    <th>id</th>
+                    <th>Company Name</th>
+                    <th>Address Email</th>
+                    <th>Phone Number</th>
+                    <th><h1 class="heading">Options</h1></th>
                 </tr>
                 <tr>
-                  <td>Este es un banco de pruebas</td>
-                  <td>Este es un banco de pruebas</td>
-                  <td>Este es un banco de pruebas</td>
-                  <td>Este es un banco de pruebas</td>
+                    @foreach ($tbl_customers as $customer)
+                <tr>
+                    <td>{{ $customer->id }}</td>
+                    <td>{{ $customer->company_name }}</td>
+                    <td>{{ $customer->addres_email }}</td>
+                    <td>{{ $customer->phone_number }}</td>
+                    <td><a href="#about" class="btn">Edit</a></td>
+                    <td><a href="#about" class="btn">Delete</a></td>
                 </tr>
-              </table>
+                @endforeach
+                </tr>
+            </table>
         </div>
     </section>
-
+    <!--Home Section Ends-->
 
     <!--Home Section Starts-->
     <section class="about" id="about">
@@ -674,7 +682,9 @@
     <!--Js Link-->
     <script src="js/script.js"></script>
     <!--LightGallery Link-->
-    <script>lightGallery(document.querySelector('.projects .box-container'));</script>
+    <script>
+        lightGallery(document.querySelector('.projects .box-container'));
+    </script>
 </body>
 
 </html>

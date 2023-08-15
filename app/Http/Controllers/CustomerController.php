@@ -9,7 +9,8 @@ use App\Models\Customer;
 class CustomerController extends Controller
 {
     public function view_index(){
-        return view('index');
+        $tbl_customers = Customer::all();
+        return view('index', ['tbl_customers' => $tbl_customers]);
     }
 
     public function store(Request $request){
