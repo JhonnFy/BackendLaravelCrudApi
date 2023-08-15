@@ -148,19 +148,15 @@
             <table>
                 <tr>
                   <th>id</th>
-                  <th>company_name</th>
-                  <th>address_email</th>
-                  <th>phone_number</th>
+                  <th>Company Name</th>
+                  <th>Address Email</th>
+                  <th>Phone Number</th>
                 </tr>
                 <tr>
-                  <td>Alfreds Futterkiste</td>
-                  <td>Maria Anders</td>
-                  <td>Germany</td>
-                </tr>
-                <tr>
-                  <td>Centro comercial Moctezuma</td>
-                  <td>Francisco Chang</td>
-                  <td>Mexico</td>
+                  <td>Este es un banco de pruebas</td>
+                  <td>Este es un banco de pruebas</td>
+                  <td>Este es un banco de pruebas</td>
+                  <td>Este es un banco de pruebas</td>
                 </tr>
               </table>
         </div>
