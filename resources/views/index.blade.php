@@ -142,6 +142,30 @@
     </section>
     <!--Home Section Ends-->
 
+    <section class="about" id="about">
+        <h1 class="heading">Read</h1>
+        <div class="">
+            <table>
+                <tr>
+                  <th>id</th>
+                  <th>company_name</th>
+                  <th>address_email</th>
+                  <th>phone_number</th>
+                </tr>
+                <tr>
+                  <td>Alfreds Futterkiste</td>
+                  <td>Maria Anders</td>
+                  <td>Germany</td>
+                </tr>
+                <tr>
+                  <td>Centro comercial Moctezuma</td>
+                  <td>Francisco Chang</td>
+                  <td>Mexico</td>
+                </tr>
+              </table>
+        </div>
+    </section>
+
 
     <!--Home Section Starts-->
     <section class="about" id="about">
