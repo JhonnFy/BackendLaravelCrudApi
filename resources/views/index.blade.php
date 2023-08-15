@@ -148,7 +148,7 @@
         <div>
             <table>
                 <tr>
-                    <th>id</th>
+                    <th>Id</th>
                     <th>Company Name</th>
                     <th>Address Email</th>
                     <th>Phone Number</th>
