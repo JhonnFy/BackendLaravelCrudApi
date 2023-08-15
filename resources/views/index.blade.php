@@ -644,10 +644,7 @@
 
         <div class="credit">Created By<span>Mr.Developer DIJHONS</span>!All Rights Reserved!</div>
     </section>
-
-
     <!--Footer Section Ends-->
-
 
 
     <!--Lightgallery Link-->
