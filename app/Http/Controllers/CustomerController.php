@@ -25,5 +25,11 @@ class CustomerController extends Controller
         return redirect(route('customer.index'));
 
     }
+
+
+    public function destroy(Customer $customer){
+        $customer->delete();
+    }
+
 }
 

@@ -17,6 +17,9 @@ use App\Http\Controllers\JsonCustomerController;
 
 
 Route::get('/', [CustomerController::class,'view_index'])->name('customer.index');
+Route::delete('customer/{customer}/destroy',[CustomerController::class,'destroy'])->name('customer.destroy');
+
+
 Route::post('/customer/create', [CustomerController::class,'store'])->name('customer.store');
 
 

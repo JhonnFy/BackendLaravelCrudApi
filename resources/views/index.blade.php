@@ -161,8 +161,16 @@
                     <td>{{ $customer->company_name }}</td>
                     <td>{{ $customer->addres_email }}</td>
                     <td>{{ $customer->phone_number }}</td>
-                    <td><a href="#about" class="btn">Edit</a></td>
-                    <td><a href="#about" class="btn">Delete</a></td>
+                    <td><a href="#" class="btn">Edit</a></td>
+                    
+                    <td>
+                        <form method="post" action="{{route('customer.destroy', ['customer' => $customer])}}">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value="Delete" class="btn">
+                        </form>
+                    
+                    </td>
                 </tr>
                 @endforeach
                 </tr>
