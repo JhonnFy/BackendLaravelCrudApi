@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use app\http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Models\Customer;
+
 
 class CrudController extends Controller
 {
