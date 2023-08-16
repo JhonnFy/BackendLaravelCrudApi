@@ -13,7 +13,7 @@ class Order extends Model
     #AtributesTable
     protected $fillable = ['date_order','pay_day','discount','sent'];
 
-    public function orderModel(){
+    public function customer(){
         return $this->belongsTo(Customer::class);
     }
 }

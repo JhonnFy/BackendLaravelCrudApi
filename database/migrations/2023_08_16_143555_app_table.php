@@ -40,7 +40,7 @@ return new class extends Migration
 
             #SelectColumm
             $table->unsignedInteger('customer_id');
-            #AddFK
+            #ReferencesFK
             $table->foreign('customer_id')->references('id')->on('customers');
                         
             $table->timestamps();

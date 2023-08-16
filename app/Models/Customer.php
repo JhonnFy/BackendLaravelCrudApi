@@ -13,7 +13,7 @@ class Customer extends Model
     #AtributesTable
     protected $fillable = ['company_name', 'addres_email', 'phone_number'];
 
-    public function customerModel(){
+    public function orders(){
         return $this->hasMany(Order::class);
     }
 }
