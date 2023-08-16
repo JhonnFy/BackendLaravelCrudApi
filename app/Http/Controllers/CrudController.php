@@ -28,8 +28,50 @@ class CrudController extends Controller
             $inyect = Customer::create($date);
             #Json
             return response()->json($inyect, 200);
-        }catch(\Throwable){
-            return "Not Found";
+        }catch(\Throwable $not_create){
+            return response()->json(['not found' => $not_create->getMessage()],500);
+        }
+    }
+
+     /**
+     * Select Id
+     */
+    public function getById($id){
+        try{
+            $date = Customer::find($id);
+            return response()->json($date, 200);
+        }catch(\Throwable $not_id){
+
+        }
+    }
+
+     /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        try{
+            $date['company_name'] = $request['company_name'];
+            $date['addres_email'] = $request['addres_email'];
+            $date['phone_number'] = $request ['phone_number'];
+            Customer::find($id)->update($date);
+            $inyect = Customer::find($id);
+            return response()->json($inyect, 200);
+        }catch(\Throwable $not_update){
+            return response()->json(['not found' => $not_update->getMessage()],500);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function delete($id)
+    {
+        try{
+            $inyect = Customer::find($id)->delete();
+            return response()->json(["deleted" => $inyect], 200);
+        }catch(\Throwable $not_delete){
+            return response()->json(['not found' => $not_delete->getMessage()],500);
         }
     }
 
@@ -57,27 +99,4 @@ class CrudController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        try{
-
-        }catch(\Throwable){
-
-        }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        try{
-
-        }catch(\Throwable){
-
-        }
-    }
 }
