@@ -1,4 +1,0 @@
-1-Create migration
-    Run command migration
-2-Create model
-    Attributes tables
