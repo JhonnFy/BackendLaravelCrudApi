@@ -42,6 +42,20 @@ class CrudController extends Controller
         }
     }
 
+
+     /**
+     * Remove the specified resource from storage.
+     */
+    public function delete($id)
+    {
+        try{
+            $inyect = Customer::find($id)->delete();
+            return response()->json(["deleted" => $inyect], 200);
+        }catch(\Throwable $not_delete){
+            return response()->json(['not found' => $not_delete->getMessage()],500);
+        }
+    }
+
      /**
      * Select Id
      */
@@ -71,18 +85,7 @@ class CrudController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function delete($id)
-    {
-        try{
-            $inyect = Customer::find($id)->delete();
-            return response()->json(["deleted" => $inyect], 200);
-        }catch(\Throwable $not_delete){
-            return response()->json(['not found' => $not_delete->getMessage()],500);
-        }
-    }
+   
 
     /**
      * Store a newly created resource in storage.

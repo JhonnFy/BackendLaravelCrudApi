@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\CrudController;
+use app\http\Controllers\CrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 
 Route::prefix('v1/customer')->group(function () {
-    Route::get('/',[ PersonController::class, 'get']);
-    Route::post('/',[ PersonController::class, 'create']);
-    Route::delete('/{id}',[ PersonController::class, 'delete']);
-    Route::get('/{id}',[ PersonController::class, 'getById']);
-    Route::put('/{id}',[ PersonController::class, 'update']);
+    Route::get('/',[CrudController::class, 'get']);
+    Route::post('/',[CrudController::class, 'create']);
+    Route::delete('/{id}',[CrudController::class, 'delete']);
+    Route::get('/{id}',[CrudController::class, 'getById']);
+    Route::put('/{id}',[CrudController::class, 'update']);
 });
