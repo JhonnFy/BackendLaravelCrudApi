@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class CrudController extends Controller
@@ -23,6 +24,10 @@ class CrudController extends Controller
             $date['company_name'] = $request['company_name'];
             $date['addres_email'] = $request['addres_email'];
             $date['phone_number'] = $request ['phone_number'];
+            #Insert
+            $inyect = Customer::create($date);
+            #Json
+            return response()->json($inyect, 200);
         }catch(\Throwable){
             return "Not Found";
         }
