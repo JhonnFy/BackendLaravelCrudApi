@@ -19,12 +19,11 @@ Route::get('/', function () {
 });
 
 Route::prefix('v1/customer')->group(function () {
-
-    Route::get('/',[CrudController::class, 'get']);
-
     Route::get('/',[CrudController::class, 'get']);
     Route::post('/',[CrudController::class, 'create']);
     Route::delete('/{id}',[CrudController::class, 'delete']);
     Route::get('/{id}',[CrudController::class, 'getById']);
     Route::put('/{id}',[CrudController::class, 'update']);
 });
+
+
