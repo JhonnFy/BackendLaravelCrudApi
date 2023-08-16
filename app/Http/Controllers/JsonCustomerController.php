@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class OutCustomer extends Controller
+class JsonCustomerController extends Controller
 {
-    public function OutCustomer(){
+    public function JsonCustomer(){
+
         $customer = Customer::all();
 
         $outBooktoview = collect();
@@ -25,6 +26,7 @@ class OutCustomer extends Controller
         return response()->json([
             'outBooktoview' => $outBooktoview
         ], 200);
+
 
     }
 }

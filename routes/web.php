@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OutCustomer;
+use App\Http\Controllers\JsonCustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +15,10 @@ use App\Http\Controllers\OutCustomer;
 |
 */
 
-// Route::get('/', function () {
-//      return view('welcome');
-// });
 
 Route::get('/', [CustomerController::class,'view_index'])->name('customer.index');
-Route::get('/customer/out',[OutCustomer::class,'OutCustomer'])->name('customer.outcustomer');
 Route::post('/customer/create', [CustomerController::class,'store'])->name('customer.store');
 
+
+#Json
+Route::get('/JsonCustomer',[JsonCustomerController::class,'JsonCustomer'])->name('customer.json');
