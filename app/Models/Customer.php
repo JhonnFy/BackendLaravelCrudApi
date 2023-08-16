@@ -11,7 +11,11 @@ class Customer extends Model
     use HasFactory;
 
     #AtributesTable
-    protected $fillable = ['company_name', 'addres_email', 'phone_number'];
+    protected $fillable = [
+        'company_name', 
+        'addres_email', 
+        'phone_number'
+    ];
 
     public function orders(){
         return $this->hasMany(Order::class);

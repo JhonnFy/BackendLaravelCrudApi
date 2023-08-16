@@ -20,10 +20,9 @@ Route::get('/', function () {
 
 
 Route::prefix('v1/customer')->group(function () {
-    Route::get('/',[CrusController::class, 'get']);
-    Route::post('/',[CrusController::class, 'create']);
-    Route::get('/{id}',[CrusController::class, 'getById']);
-    #Update
-    Route::put('/{id}',[CrusController::class, 'update']);
-    Route::delete('/{id}',[CrusController::class, 'delete']);
+    Route::get('/',[ PersonController::class, 'get']);
+    Route::post('/',[ PersonController::class, 'create']);
+    Route::delete('/{id}',[ PersonController::class, 'delete']);
+    Route::get('/{id}',[ PersonController::class, 'getById']);
+    Route::put('/{id}',[ PersonController::class, 'update']);
 });

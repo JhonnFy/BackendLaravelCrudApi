@@ -12,7 +12,7 @@ class CrudController extends Controller
      */
     public function index()
     {
-        //Json
+        
     }
 
     public function get(){
