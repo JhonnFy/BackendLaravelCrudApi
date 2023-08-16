@@ -17,9 +17,15 @@ class CrudController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        try{
+            $date['company_name'] = $request['company_name'];
+            $date['addres_email'] = $request['addres_email'];
+            $date['phone_number'] = $request ['phone_number'];
+        }catch(\Throwable){
+            return "Not Found";
+        }
     }
 
     /**
@@ -51,7 +57,11 @@ class CrudController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try{
+
+        }catch(\Throwable){
+
+        }
     }
 
     /**
@@ -59,6 +69,10 @@ class CrudController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try{
+
+        }catch(\Throwable){
+
+        }
     }
 }
