@@ -15,6 +15,15 @@ class CrudController extends Controller
         //Json
     }
 
+    public function get(){
+        try { 
+            $data = Customer::get();
+            return response()->json($data, 200);
+        } catch (\Throwable $not_get) {
+            return response()->json([ 'error' => $not_get->getMessage()], 500);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      */

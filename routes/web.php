@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\CrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::prefix('v1/customer')->group(function () {
+    Route::get('/',[CrusController::class, 'get']);
+    Route::post('/',[CrusController::class, 'create']);
+    Route::get('/{id}',[CrusController::class, 'getById']);
+    #Update
+    Route::put('/{id}',[CrusController::class, 'update']);
+    Route::delete('/{id}',[CrusController::class, 'delete']);
 });
