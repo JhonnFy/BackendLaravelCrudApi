@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('v1/customer')->group(function () {
+Route::prefix('/customer')->group(function () {
     Route::get('/',[CrudController::class, 'get']);
     Route::post('/',[CrudController::class, 'create']);
     Route::delete('/{id}',[CrudController::class, 'delete']);
