@@ -19,6 +19,9 @@ Route::get('/', function () {
 });
 
 Route::prefix('v1/customer')->group(function () {
+
+    Route::get('/',[CrudController::class, 'get']);
+
     Route::get('/',[CrudController::class, 'get']);
     Route::post('/',[CrudController::class, 'create']);
     Route::delete('/{id}',[CrudController::class, 'delete']);
