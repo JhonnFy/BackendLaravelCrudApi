@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
+    #Model->factory
     use HasFactory;
 
-    protected $fillable = [
-        'company_name',
-        'addres_email',
-        'phone_number',
-        'image',
-    ];
+    #AtributesTable
+    protected $fillable = ['company_name', 'addres_email', 'phone_number'];
 
+    public function customerModel(){
+        return $this->hasMany(Order::class);
+    }
 }
