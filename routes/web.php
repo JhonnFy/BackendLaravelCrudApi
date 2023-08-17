@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\http\Controllers\CrudController;
+use App\Http\Controllers\API\CrudController;
 
 /*
 |--------------------------------------------------------------------------
