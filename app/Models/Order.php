@@ -11,7 +11,12 @@ class Order extends Model
     use HasFactory;
 
     #AtributesTable
-    protected $fillable = ['date_order','pay_day','discount','sent'];
+    protected $fillable = [
+        'date_order',
+        'pay_day',
+        'discount',
+        'sent'
+    ];
 
     public function customer(){
         return $this->belongsTo(Customer::class);
