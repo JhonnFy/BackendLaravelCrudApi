@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
-use app\http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Customer;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 class CrudController extends Controller
