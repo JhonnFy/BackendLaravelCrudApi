@@ -57,20 +57,19 @@ return new class extends Migration
 
         });
 
+         Schema::create('ordered_products', function (Blueprint $table){
+            #Reserve
+             $table->unsignedInteger('order_id');
+             $table->foreign('order_id')->references('id')->on('orders');
+            #Reserve
+             $table->unsignedInteger('product_id');
+             $table->foreign('product_id')->references('id')->on('products');
 
-
-        // Schema::create('ordered_products', function (Blueprint $table){
-        //     $table->unsignedInteger('orders_id');
-        //     $table->foreign('orders_id')->references('id')->on('orders');
-
-        //     $table->unsignedInteger('products_id');
-        //     $table->foreign('products_id')->references('id')->on('products');
-
-        //     $table->float('units');
+            #NewAtribute 
+             $table->float('units');
             
-        //     $table->timestamps();
-        // });
-
+             $table->timestamps();
+        });
 
     }
 
@@ -85,3 +84,4 @@ return new class extends Migration
         Schema::dropIfExists('products');
     }
 };
+
