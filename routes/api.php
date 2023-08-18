@@ -28,4 +28,8 @@ Route::prefix('/customers')->group(function () {
     Route::delete('/{id}',[ CrudController::class, 'delete']);
 });
 
-
+// {
+//     "company_name": "opq",
+//     "addres_email": "opq@gmail.com",
+//     "phone_number": "1234567"
+// }

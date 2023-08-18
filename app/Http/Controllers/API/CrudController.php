@@ -9,7 +9,9 @@ use App\Models\Customer;
 class CrudController extends Controller
 {
 
-
+    /**
+     * Select ID
+    */
     public function get()
     {
         $data = Customer::get();
@@ -19,15 +21,12 @@ class CrudController extends Controller
 
 
     /**
-     * Show the form for creating a new resource.
-     */
+     * InsertID
+    */
     public function create(Request $request)
     {
         try {
-            // $date['company_name'] = $request['company_name'];
-            // $date['addres_email'] = $request['addres_email'];
-            // $date['phone_number'] = $request['phone_number'];
-
+            #Array
             $data = [
                 'company_name' => $request->company_name,
                 'addres_email' => $request->addres_email,
@@ -36,7 +35,7 @@ class CrudController extends Controller
             #Insert
             $customer = Customer::create($data);
             #Json
-            return response()->json($customer, 200);
+            return response()->json($customer, 201);
         } catch (\Throwable $not_create) {
             return response()->json(['NotFoundCrud CREATE' => $not_create->getMessage()], 400);
         }
@@ -63,12 +62,12 @@ class CrudController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $date['company_name'] = $request['company_name'];
-            $date['addres_email'] = $request['addres_email'];
-            $date['phone_number'] = $request['phone_number'];
-            Customer::find($id)->update($date);
+            $data['company_name'] = $request['company_name'];
+            $data['addres_email'] = $request['addres_email'];
+            $data['phone_number'] = $request['phone_number'];
+            Customer::find($id)->update($data);
             $inyect = Customer::find($id);
-            return response()->json($inyect, 200);
+            return response()->json($inyect, 201);
         } catch (\Throwable $not_update) {
             return response()->json(['NotFoundCrud UPDATE' => $not_update->getMessage()], 400);
         }
@@ -85,7 +84,7 @@ class CrudController extends Controller
             $customers = Customer::All();
             return response()->json(["customers" => $customers], 200);
         } catch (\Throwable $not_delete) {
-            return response()->json(['NotFoundCrud Deleted' => $not_delete->getMessage()], 400);
+            return response()->json(['NotFoundCrud DELETE' => $not_delete->getMessage()], 400);
         }
     }
 }
