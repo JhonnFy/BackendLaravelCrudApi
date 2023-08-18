@@ -15,7 +15,8 @@ class CrudController extends Controller
     public function get()
     {
         $data = Customer::get();
-        return response()->json($data, 200);
+        $customers = Customer::all();
+        return response()->json(["customers" => $customers], 200);
      
     }
 
@@ -33,7 +34,9 @@ class CrudController extends Controller
             #Insert
             $customer = Customer::create($data);
             #Json
-            return response()->json($customer, 201);
+            #return response()->json($customer, 201);
+            $customers = Customer::all();
+            return response()->json(["customers" => $customers], 200);
     }
 
     /**
@@ -43,7 +46,8 @@ class CrudController extends Controller
     {
         $data = Customer::find($id);
         #Json
-        return response()->json($data, 200);
+        $customers = Customer::all();
+        return response()->json(["customers" => $customers], 200);
         
     }
 
@@ -57,7 +61,9 @@ class CrudController extends Controller
             $data['phone_number'] = $request['phone_number'];
             Customer::find($id)->update($data);
             $inyect = Customer::find($id);
-            return response()->json($inyect, 201);
+            
+            $customers = Customer::all();
+            return response()->json(["customers" => $customers], 200);
     }
     
     /**
