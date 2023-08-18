@@ -27,3 +27,5 @@ Route::prefix('/customers')->group(function () {
     Route::put('/{id}',[ CrudController::class, 'update']);
     Route::delete('/{id}',[ CrudController::class, 'delete']);
 });
+
+

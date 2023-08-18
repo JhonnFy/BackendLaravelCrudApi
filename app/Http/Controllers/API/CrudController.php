@@ -12,12 +12,9 @@ class CrudController extends Controller
 
     public function get()
     {
-        try {
-            $data = Customer::get();
-            return response()->json($data, 200);
-        } catch (\Throwable $not_get) {
-            return response()->json(['NotFoundCrud GET' => $not_get->getMessage()], 500);
-        }
+        $data = Customer::get();
+        return response()->json($data, 200);
+     
     }
 
 
@@ -27,15 +24,21 @@ class CrudController extends Controller
     public function create(Request $request)
     {
         try {
-            $date['company_name'] = $request['company_name'];
-            $date['addres_email'] = $request['addres_email'];
-            $date['phone_number'] = $request['phone_number'];
+            // $date['company_name'] = $request['company_name'];
+            // $date['addres_email'] = $request['addres_email'];
+            // $date['phone_number'] = $request['phone_number'];
+
+            $data = [
+                'company_name' => $request->company_name,
+                'addres_email' => $request->addres_email,
+                'phone_number' => $request->phone_number
+            ];
             #Insert
-            $inyect = Customer::create($date);
+            $customer = Customer::create($data);
             #Json
-            return response()->json($inyect, 200);
+            return response()->json($customer, 200);
         } catch (\Throwable $not_create) {
-            return response()->json(['NotFoundCrud CREATE' => $not_create->getMessage()], 500);
+            return response()->json(['NotFoundCrud CREATE' => $not_create->getMessage()], 400);
         }
     }
 
@@ -46,10 +49,10 @@ class CrudController extends Controller
     public function getById($id)
     {
         try {
-            $date = Customer::find($id);
-            return response()->json($date, 200);
+            $data = Customer::find($id);
+            return response()->json($data, 200);
         } catch (\Throwable $not_id) {
-            return response()->json([ 'error' => $not_id->getMessage()], 500);
+            return response()->json(['error' => $not_id->getMessage()], 400);
         }
     }
 
@@ -67,7 +70,7 @@ class CrudController extends Controller
             $inyect = Customer::find($id);
             return response()->json($inyect, 200);
         } catch (\Throwable $not_update) {
-            return response()->json(['NotFoundCrud UPDATE' => $not_update->getMessage()], 500);
+            return response()->json(['NotFoundCrud UPDATE' => $not_update->getMessage()], 400);
         }
     }
 
@@ -78,12 +81,11 @@ class CrudController extends Controller
     public function delete($id)
     {
         try {
-            $inyect = Customer::find($id)->delete();
-            return response()->json(["deleted" => $inyect], 200);
+            $delete = Customer::find($id)->delete();
+            $customers = Customer::All();
+            return response()->json(["customers" => $customers], 200);
         } catch (\Throwable $not_delete) {
-            return response()->json(['NotFoundCrud Deleted' => $not_delete->getMessage()], 500);
+            return response()->json(['NotFoundCrud Deleted' => $not_delete->getMessage()], 400);
         }
     }
-
-    
 }
