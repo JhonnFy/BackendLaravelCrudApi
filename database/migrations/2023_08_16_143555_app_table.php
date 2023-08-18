@@ -65,7 +65,7 @@ return new class extends Migration
              $table->unsignedInteger('product_id');
              $table->foreign('product_id')->references('id')->on('products');
 
-            #NewAtribute 
+            #NewAtribute
              $table->float('units');
             
              $table->timestamps();
