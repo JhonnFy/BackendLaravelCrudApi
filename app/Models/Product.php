@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    #AtributesTable
+    protected $fillable = [
+        'section',
+        'name',
+        'price',
+        'date',
+        'imported_country'
+    ];
+
+    #OneToMany Product_Orderedproduct
+    public function orderedproducts(){
+        return $this->hasMany(Orderedproduct::class);
+    }
+
 }

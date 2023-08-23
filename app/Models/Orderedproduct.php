@@ -16,10 +16,14 @@ class Orderedproduct extends Model
         'units'
     ];
 
-    #HasMany OrderedProduct_Orders
-    public function orders()
-    {
-        return $this->hasMany(Post::class);
+    #BelongsTo Orders_OrderedProduct
+    public function orders(){
+        return $this->belongsTo(Order::class);
+    }
+
+    #BelongsTo Products_OrderedProduct
+    public function products(){
+        return $this->belongsTo(Product::class);
     }
 
 }

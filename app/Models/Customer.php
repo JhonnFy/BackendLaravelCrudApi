@@ -17,7 +17,9 @@ class Customer extends Model
         'phone_number'
     ];
 
+    #OneToMany Customer_Order
     public function orders(){
         return $this->hasMany(Order::class);
     }
 }
+
