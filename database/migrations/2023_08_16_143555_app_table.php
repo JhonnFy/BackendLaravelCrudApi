@@ -59,7 +59,7 @@ return new class extends Migration
 
         });
 
-        Schema::create('ordered_products', function (Blueprint $table){
+        Schema::create('orders_products', function (Blueprint $table){
             #Reserve
              $table->unsignedInteger('order_id');
              $table->foreign('order_id')->references('id')->on('orders');

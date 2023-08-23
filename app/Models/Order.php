@@ -27,5 +27,10 @@ class Order extends Model
     public function orderedproducts(){
         return $this->hasMany(Orderedproduct::class);
     }
+
+    public function products()
+    {   
+        return $this->belongsToMany(Product::class)->withTimestamps()->withPivot(["units"]);
+    }
     
 }
