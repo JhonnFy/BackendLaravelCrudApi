@@ -18,7 +18,16 @@ class Order extends Model
         'sent'
     ];
 
-    public function customer(){
+    #OneToMany Customer_Orders
+    public function customers(){
         return $this->belongsTo(Customer::class);
     }
+
+    #OneToMany Orders_OrderedProduct
+    public function orderedproducts(){
+        return $this->belongsTo(ordredproduct::class);
+    }
+
+
+
 }
