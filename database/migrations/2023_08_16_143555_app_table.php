@@ -46,6 +46,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
+
         Schema::create('products', function (Blueprint $table){
             $table->increments('id');
             $table->string('section');
@@ -58,7 +59,7 @@ return new class extends Migration
 
         });
 
-         Schema::create('ordered_products', function (Blueprint $table){
+        Schema::create('ordered_products', function (Blueprint $table){
             #Reserve
              $table->unsignedInteger('order_id');
              $table->foreign('order_id')->references('id')->on('orders');
@@ -72,6 +73,10 @@ return new class extends Migration
              $table->timestamps();
         });
 
+
+     
+
+       
     }
 
     /**
@@ -83,6 +88,7 @@ return new class extends Migration
         Schema::dropIfExists('customers');
         Schema::dropIfExists('orders');
         Schema::dropIfExists('products');
+        Schema::dropIfExists('ordered_products');
     }
 };
 
