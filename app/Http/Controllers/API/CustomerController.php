@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 
-class CrudController extends Controller
-{
 
-    /**
+
+class CustomerController extends Controller
+{
+      /**
      * Select ID
     */
     public function get()

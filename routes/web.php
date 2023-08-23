@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\CrudController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,5 @@ use App\Http\Controllers\API\CrudController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 
 
