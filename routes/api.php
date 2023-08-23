@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-#Route::(PostMan) 
+#Route::(PostMan) http://127.0.0.1:8000/api/customers/
 Route::prefix('/customers')->group(function () {
     Route::get('/',[ CustomerController::class, 'get']);
     Route::post('/',[ CustomerController::class, 'create']);
