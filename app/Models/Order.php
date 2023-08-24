@@ -24,16 +24,6 @@ class Order extends Model
         return $this->belongsTo(Customer::class);
     }
 
-    #OneToMany Orders_OrderedProduct
-    // public function orderedproducts(){
-    //     return $this->hasMany(Orderedproduct::class);
-    // }
-
-    // public function products()
-    // {   
-    //     return $this->belongsToMany(Product::class)->withTimestamps()->withPivot(["units"]);
-    // }
-
     /*
     |--------------------------------------------------------------------------
     | withPivot

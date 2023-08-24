@@ -18,15 +18,11 @@ class Product extends Model
         'imported_country'
     ];
 
-    #OneToMany Product_Orderedproduct
-    // public function orderedproducts(){
-    //     return $this->hasMany(Orderedproduct::class);
-    // }
-
-
     public function Orders(){
         return $this->belongsToMany('\App\Order','orders_products')
              ->withPivot('orders_id'); 
     } 
+
+
 
 }
