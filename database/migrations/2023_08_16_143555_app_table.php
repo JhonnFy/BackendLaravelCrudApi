@@ -60,6 +60,8 @@ return new class extends Migration
         });
 
         Schema::create('orders_products', function (Blueprint $table){
+            $table->increments('id');
+
             #Reserve
              $table->unsignedInteger('order_id');
              $table->foreign('order_id')->references('id')->on('orders');
@@ -73,9 +75,6 @@ return new class extends Migration
              $table->timestamps();
         });
 
-
-     
-
        
     }
 
@@ -88,7 +87,7 @@ return new class extends Migration
         Schema::dropIfExists('customers');
         Schema::dropIfExists('orders');
         Schema::dropIfExists('products');
-        Schema::dropIfExists('ordered_products');
+        Schema::dropIfExists('orders_products');
     }
 };
 

@@ -18,19 +18,31 @@ class Order extends Model
         'sent'
     ];
 
+ 
     #BelongsTo Customer_Orders
     public function customers(){
         return $this->belongsTo(Customer::class);
     }
 
     #OneToMany Orders_OrderedProduct
-    public function orderedproducts(){
-        return $this->hasMany(Orderedproduct::class);
-    }
+    // public function orderedproducts(){
+    //     return $this->hasMany(Orderedproduct::class);
+    // }
 
-    public function products()
-    {   
-        return $this->belongsToMany(Product::class)->withTimestamps()->withPivot(["units"]);
+    // public function products()
+    // {   
+    //     return $this->belongsToMany(Product::class)->withTimestamps()->withPivot(["units"]);
+    // }
+
+    /*
+    |--------------------------------------------------------------------------
+    | withPivot
+|   --------------------------------------------------------------------------
+    Aquellos otros atributos que se quieren acceder desde la tabla pivot
+|   */
+    public function products(){
+        return $this->belongsToMany('\App\Product','orders_products')
+            ->withPivot('products_id','units');
     }
     
 }
