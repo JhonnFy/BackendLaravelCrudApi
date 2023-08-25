@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\CustomerController;
+use App\Http\Controllers\API\OrderProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,17 +42,3 @@ Route::prefix('/orders')->group(function () {
 });
 
 
-// {
-//     "company_name": "opq",
-//     "addres_email": "opq@gmail.com",
-//     "phone_number": "1234567"
-// }
-
-
-// {
-//     "date_order": "2023-8-24",
-//     "pay_day" : "2023-8-31",
-//     "discount": "10",
-//     "shipment_city": "Bogota",
-//     "customer_id": "1"
-// }
