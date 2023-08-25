@@ -15,7 +15,7 @@ class Order extends Model
         'date_order',
         'pay_day',
         'discount',
-        'sent'
+        'shipment_city'
     ];
 
  

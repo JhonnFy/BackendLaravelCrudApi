@@ -10,7 +10,7 @@ use App\Models\Customer;
 
 class CustomerController extends Controller
 {
-      /**
+    /**
      * Select ID
     */
     public function get()

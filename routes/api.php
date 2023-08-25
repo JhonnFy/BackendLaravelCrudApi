@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CustomerController;
+use App\Http\Controllers\API\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,13 @@ Route::prefix('/customers')->group(function () {
     Route::put('/{id}',[ CustomerController::class, 'update']);
     Route::delete('/{id}',[ CustomerController::class, 'delete']);
 });
+
+
+#Route::(PostMan) http://127.0.0.1:8000/api/orders/
+Route::prefix('/orders')->group(function () {
+    Route::get('/',[ OrderController::class, 'get']);
+});
+
 
 // {
 //     "company_name": "opq",

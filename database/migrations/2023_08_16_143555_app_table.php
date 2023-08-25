@@ -36,7 +36,7 @@ return new class extends Migration
             $table->date('date_order');
             $table->date('pay_day');
             $table->float('discount');
-            $table->string('sent');
+            $table->string('shipment_city');
 
             #SelectColumm
             $table->unsignedInteger('customer_id');
