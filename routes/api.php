@@ -1,9 +1,10 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\CustomerController;
 use App\Http\Controllers\API\OrderController;
+use App\Http\Controllers\API\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
