@@ -33,7 +33,7 @@ class CustomerController extends Controller
                 'phone_number' => $request->phone_number
             ];
             #Insert
-            $customer = Customer::create($data);
+            $customers = Customer::create($data);
             #Json
             #return response()->json($customer, 201);
             $customers = Customer::all();
@@ -61,7 +61,7 @@ class CustomerController extends Controller
             $data['addres_email'] = $request['addres_email'];
             $data['phone_number'] = $request['phone_number'];
             Customer::find($id)->update($data);
-            $inyect = Customer::find($id);
+            $inject = Customer::find($id);
             
             $customers = Customer::all();
             return response()->json(["customers" => $customers], 200);

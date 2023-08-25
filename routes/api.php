@@ -33,6 +33,10 @@ Route::prefix('/customers')->group(function () {
 #Route::(PostMan) http://127.0.0.1:8000/api/orders/
 Route::prefix('/orders')->group(function () {
     Route::get('/',[ OrderController::class, 'get']);
+    Route::post('/',[ OrderController::class, 'create']);
+    Route::get('/{id}',[ OrderController::class, 'getById']);
+    Route::put('/{id}',[ OrderController::class, 'update']);
+    Route::delete('/{id}',[ OrderController::class, 'delete']);
 });
 
 
@@ -40,4 +44,13 @@ Route::prefix('/orders')->group(function () {
 //     "company_name": "opq",
 //     "addres_email": "opq@gmail.com",
 //     "phone_number": "1234567"
+// }
+
+
+// {
+//     "date_order": "2023-8-24",
+//     "pay_day" : "2023-8-31",
+//     "discount": "10",
+//     "shipment_city": "Bogota",
+//     "customer_id": "1"
 // }
