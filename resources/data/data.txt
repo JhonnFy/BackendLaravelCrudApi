@@ -12,3 +12,4 @@
     "shipment_city": "Bogota",
     "customer_id": "1"
 }
+
